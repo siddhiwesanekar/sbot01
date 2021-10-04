@@ -8,10 +8,10 @@ import ast
 
 from flask import Flask, render_template, request
 from test import response
-app = Flask(__name__, template_folder = 'C:/Users/mruna/PycharmProjects/handoff/handoff/templates')
+app = Flask(__name__, template_folder = './templates')
 
 
-app.static_folder = 'C:/Users/mruna/PycharmProjects/handoff/handoff/static'
+app.static_folder = './static'
 app.temp_dict = {}
 
 @app.route("/")
