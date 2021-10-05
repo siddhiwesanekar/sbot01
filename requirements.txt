@@ -37,4 +37,3 @@ tensorflow-gpu
 termcolor
 tflearn
 tqdm
-gunicorn
