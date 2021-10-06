@@ -19,7 +19,7 @@ def home():
 
 @app.route("/get")
 def get_bot_response():
-    
+    console.log(request.args.get('msg'));
     userText = request.args.get('msg')
     msg5 = response(userText)
     #print(type(msg5))
@@ -92,4 +92,4 @@ s = socket.socket()
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=8080)
