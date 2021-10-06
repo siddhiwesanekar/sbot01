@@ -94,33 +94,26 @@
     }
 
     function botResponse(rawText) {
-        console.log(rawText);
-      // Bot Response
+      console.log(rawText);
       $.get("/get1", { msg: rawText }).done(function (data) {
-        
-
         console.log(data);
         console.log(typeof(data));
         const msgText = data;
         if (data.constructor == Object) {
-         console.log("yes yes")
-         const msgText = "Please Specify One of the following !"
-         appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
-         num = 1;
-         for(var k in data){
-
-   //Return the value for the current key
-   //var v = dict[k];
-   const msgText = num + '.' + data[k];
-   num = num + 1;
-   appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
-
-}
-}
-else{
-        console.log(msgText);
-        appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
-}
+          console.log("yes yes")
+          const msgText = "Please Specify One of the following !"
+          appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+          num = 1;
+          for(var k in data){
+            const msgText = num + '.' + data[k];
+            num = num + 1;
+            appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+          }
+        }
+        else{
+          console.log(msgText);
+          appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+        }
       });
 
     }
