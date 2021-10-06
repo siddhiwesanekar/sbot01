@@ -19,7 +19,7 @@ def home():
 
 @app.route("/get")
 def get_bot_response():
-    console.log(request.args.get('msg'));
+    
     userText = request.args.get('msg')
     msg5 = response(userText)
     #print(type(msg5))
@@ -83,8 +83,6 @@ conversation=[] # Our all conversation
 
 
 
-attempt = 0
-s = socket.socket()
 
     
 
