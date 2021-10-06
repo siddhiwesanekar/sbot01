@@ -19,7 +19,6 @@ def home():
 
 @app.route("/get")
 def get_bot_response():
-    
     userText = request.args.get('msg')
     msg5 = response(userText)
     #print(type(msg5))
@@ -90,4 +89,4 @@ conversation=[] # Our all conversation
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080)
+    app.run()
