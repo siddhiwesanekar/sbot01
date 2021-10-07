@@ -10,7 +10,7 @@ from test import response
 app = Flask(__name__)
 
 
-app.static_folder = './style.css'
+app.static_folder = './static'
 app.temp_dict = {}
 
 @app.route("/")
