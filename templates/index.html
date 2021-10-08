@@ -92,7 +92,36 @@
       msgerChat.scrollTop += 500;
     }
 
-    
+    function botResponse(rawText) {
+      console.log(rawText);
+      
+      $.ajax({
+                data: {
+                    msg: rawText,
+                },
+                url: "/get",
+            }).done(function (data) {
+        console.log(data);
+        console.log(typeof(data));
+        const msgText = data;
+        if (data.constructor == Object) {
+          console.log("yes yes")
+          const msgText = "Please Specify One of the following !"
+          appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+          num = 1;
+          for(var k in data){
+            const msgText = num + '.' + data[k];
+            num = num + 1;
+            appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+          }
+        }
+        else{
+          console.log(msgText);
+          appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+        }
+      });
+
+    }
 
     // Utils
     function get(selector, root = document) {
