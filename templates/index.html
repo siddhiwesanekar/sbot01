@@ -95,7 +95,6 @@
 
     function botResponse(rawText) {
       console.log(rawText);
-      
       $.ajax({
         url: "/get",
         data: {
@@ -122,7 +121,7 @@
             appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
           }
         }
-        });
+      });
 
     }
 
