@@ -59,6 +59,7 @@ def get_bot_response():
             #print(listToStr)
             #return listToStr
             res = [''.join(ele) for ele in msg5]
+            return render_template('index.html')
 
 
 
