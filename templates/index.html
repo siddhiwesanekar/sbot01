@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
-  <script type="text/javascript" src="./static/scripts/jquery-3.2.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
   
 </head>
@@ -94,7 +94,14 @@
 
     function botResponse(rawText) {
       console.log(rawText);
-      $.get("/get1", { msg: rawText }).done(function (data) {
+      
+      $.ajax({
+                data: {
+                    msg: rawText,
+                },
+                type: "POST",
+                url: "/get",
+            }).done(function (data) {
         console.log(data);
         console.log(typeof(data));
         const msgText = data;
