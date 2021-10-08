@@ -72,7 +72,7 @@ def get_bot_response():
 
 
             return  app.temp_dict
-        return render_template('index.html')
+       
 
 
     
