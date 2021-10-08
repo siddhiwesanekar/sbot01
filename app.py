@@ -15,7 +15,7 @@ app.temp_dict = {}
 
 @app.route("/")
 def home():
-    return render_template('./index.html')
+    return render_template('index.html')
 
 @app.route("/get", methods=["POST"])
 def get_bot_response():
