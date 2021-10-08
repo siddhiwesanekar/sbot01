@@ -17,7 +17,7 @@ app.temp_dict = {}
 def home():
     return render_template('./index.html')
 
-@app.route("/get1")
+@app.route("/get", methods=["POST"])
 def get_bot_response():
     userText = request.args.get('msg')
     msg5 = response(userText)
