@@ -96,10 +96,11 @@
       console.log(rawText);
       
       $.ajax({
-                data: {
+        url: "/get",
+        data: {
                     msg: rawText,
-                },
-                url: "/get",
+                }
+                
             }).done(function (data) {
         console.log(data);
         console.log(typeof(data));
