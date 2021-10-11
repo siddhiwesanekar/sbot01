@@ -1,5 +1,5 @@
 absl-py
-jquery
+
 astunparse
 cloudpickle
 colorama
