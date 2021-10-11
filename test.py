@@ -8,6 +8,12 @@ import tflearn
 import tensorflow as tf
 import random
 import pickle
+from console_log import ConsoleLog
+
+console = logging.getLogger('console')
+console.setLevel(logging.DEBUG)
+
+
 data = pickle.load( open( "training_data_old", "rb" ) )
 words = data['words']
 classes = data['classes']
@@ -99,7 +105,7 @@ def response_command(sentence):
 
 
 def response(sentence, userID='123', show_details=False):
-    print("i am in response function")
+    logger.error('Error from test')
     if 'None of the above' in sentence:
         return ['I do not know the answer to the question. Please contact Support Team']
 
