@@ -5,6 +5,12 @@ import threading
 import requests
 import ast
 
+from console_log import ConsoleLog
+
+console = logging.getLogger('console')
+console.setLevel(logging.DEBUG)
+
+
 
 from flask import Flask, render_template, request
 from test import response
@@ -20,7 +26,7 @@ def home():
 
 @app.route("/get")
 def get_bot_response():
-    print("i am in bot function")
+    logger.error('Error logged from Python')
     userText = request.args.get('msg')
     msg5 = response(userText)
     #print(type(msg5))
