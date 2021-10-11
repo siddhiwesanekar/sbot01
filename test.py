@@ -99,6 +99,7 @@ def response_command(sentence):
 
 
 def response(sentence, userID='123', show_details=False):
+    print("i am in response function")
     if 'None of the above' in sentence:
         return ['I do not know the answer to the question. Please contact Support Team']
 
