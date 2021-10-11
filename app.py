@@ -5,10 +5,9 @@ import threading
 import requests
 import ast
 
-from console_log import ConsoleLog
+import logging
 
-console = logging.getLogger('console')
-console.setLevel(logging.DEBUG)
+logger = logging.getLogger('console')
 
 
 
@@ -26,7 +25,7 @@ def home():
 
 @app.route("/get")
 def get_bot_response():
-    logger.error('Error logged from Python')
+    logger.info("Error logged from Python")
     userText = request.args.get('msg')
     msg5 = response(userText)
     #print(type(msg5))
