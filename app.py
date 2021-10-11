@@ -4,6 +4,7 @@ import time
 import threading
 import requests
 import ast
+from console_log import ConsoleLog
 
 import logging
 
