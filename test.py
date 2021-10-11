@@ -9,9 +9,10 @@ import tensorflow as tf
 import random
 import pickle
 from console_log import ConsoleLog
+import logging
 
-console = logging.getLogger('console')
-console.setLevel(logging.DEBUG)
+logger = logging.getLogger('console')
+
 
 
 data = pickle.load( open( "training_data_old", "rb" ) )
@@ -105,7 +106,7 @@ def response_command(sentence):
 
 
 def response(sentence, userID='123', show_details=False):
-    logger.error('Error from test')
+    logger.info("Error from test")
     if 'None of the above' in sentence:
         return ['I do not know the answer to the question. Please contact Support Team']
 
