@@ -1,5 +1,6 @@
 absl-py
 console-log
+console-logging
 astunparse
 cloudpickle
 colorama
