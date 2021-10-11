@@ -4,7 +4,7 @@ import time
 import threading
 import requests
 import ast
-import $ from jquery
+
 
 from flask import Flask, render_template, request
 from test import response
